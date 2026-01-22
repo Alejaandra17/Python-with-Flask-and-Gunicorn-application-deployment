@@ -1,0 +1,13 @@
+// File: config/named.conf.local
+
+// Forward lookup zone (test.dns)
+zone "test.dns" {
+    type master;
+    file "/var/lib/bind/ale.test.dns";
+};
+
+// Reverse lookup zone (2.168.192.in-addr.arpa)
+zone "2.168.192.in-addr.arpa" { 
+    type master;
+    file "/var/lib/bind/ale.test.rev";
+};

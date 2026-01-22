@@ -1,0 +1,12 @@
+; File: config/ale.test.rev
+;
+$TTL 86400
+@ IN SOA debian.test.dns. admin.test.dns. (
+    2025101201 ; Serial
+    3600       ; Refresh
+    1800       ; Retry
+    604800     ; Expire
+    86400 )    ; Negative Cache TTL
+;
+@               IN NS debian.test.dns.
+1               IN PTR debian.test.dns. 

@@ -1,0 +1,21 @@
+# File: config/named.conf.options
+
+# ACL for trusted clients
+acl confiables {
+    192.168.2.0/24; 
+    localhost;  # Include localhost
+};
+
+options {
+    directory "/var/cache/bind";   # Cache directory
+    allow-transfer { none; };      # Disable zone transfer
+    listen-on port 53 { 192.168.2.1; 127.0.0.1; };  # Listen on IPv4
+    recursion yes;                 # Enable recursion
+    allow-recursion { confiables; }; # Recursion for trusted clients only
+    dnssec-validation yes;         # Enable DNSSEC
+    // listen-on-v6 { any; };      # IPv6 (disabled)
+    forwarders {                   # Forward queries
+        8.8.8.8;
+        1.1.1.1;
+    };
+};
