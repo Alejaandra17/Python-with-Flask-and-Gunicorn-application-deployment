@@ -6,7 +6,10 @@ name = "pypi"
 [packages]
 flask = "*"
 gunicorn = "*"
+<<<<<<< HEAD
 python-dotenv = "*"
+=======
+>>>>>>> 199bf1d (feat: successfully serve msdocs-app via nginx reverse proxy)
 
 [dev-packages]
 
